@@ -1,0 +1,71 @@
+.minfo {
+    width: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.642) 50%, rgba(2, 17, 45, 0.779) 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.info-main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0 0 0;
+}
+
+.movinfo {
+    width: 90%;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgb(11, 11, 34) 50%, black 100%);
+    padding: 15px;
+    display: flex;
+}
+
+.sec1 {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.subsec {
+    display: flex;
+    align-items: center;
+    line-height: 8px;
+}
+
+.detail {
+    color: white;
+}
+
+.overview {
+    color: white;
+}
+
+.sec2 {
+    width: 40%;
+}
+
+.sec2 img {
+    width: 100%
+}
+
+.castinfo{
+    margin-left: 5px;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cast-img {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 12%;
+}
+
+.cast-img img {
+    border-radius: 5px;
+}
