@@ -14,8 +14,13 @@ const Movieinfo = (currentMovie, handleClose,) => {
     // var emptyBox = [];
     var movieId = currentMovies.id;
 
-    const ApiCast = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${api_keys}`;
+    var ApiCast = [];
 
+    if (movieId !== null) {
+        ApiCast = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${api_keys}`;
+    } else {
+        ApiCast = `https://api.themoviedb.org/3/movie/${575264}/credits?api_key=${api_keys}`;
+    }
     const fetchApi = async () => {
         const response = await fetch(ApiCast);
         const resjson = await response.json();
@@ -29,7 +34,7 @@ const Movieinfo = (currentMovie, handleClose,) => {
         }, 100)
     }, [currentMovies])
 
-    console.log(castDetail);
+    console.log(castDetail, 'castDetails');
 
     return (
         <>
@@ -39,7 +44,7 @@ const Movieinfo = (currentMovie, handleClose,) => {
                     <div className="movinfo">
                         <div className="sec1">
                             <div className="subsec">
-                                <img src={currentMovies.poster_path ? `https://image.tmdb.org/t/p/w500/${currentMovies.poster_path}` : Noimage } alt="banner1" width='150px' height='200px' />
+                                <img src={currentMovies.poster_path ? `https://image.tmdb.org/t/p/w500/${currentMovies.poster_path}` : Noimage} alt="banner1" width='150px' height='200px' />
                                 <div className="detail">
                                     <h2>Movie Name {currentMovies.title}</h2>
                                     <h4>Rating: {currentMovies.vote_average}</h4>
@@ -60,10 +65,10 @@ const Movieinfo = (currentMovie, handleClose,) => {
                 <h2 style={{ color: 'white', marginLeft: '20px', fontSize: '2em' }}>Cast</h2>
                 <div className="castinfo">
 
-                    {castDetail.cast.slice(0, 6).map((c) => {
+                    {/* {castDetail.cast.slice(0, 6).map((c) => {
                         return (
                             <div className="cast-img" key={c.id}>
-                                <img src={`https://image.tmdb.org/t/p/w500/${c.profile_path}`} alt="" />
+                                <img src={c.profile_path ? `https://image.tmdb.org/t/p/w500/${c.profile_path}` : Noimage} alt="" />
                                 <div className="castdet">
                                     {c.name}
                                 </div>
@@ -72,7 +77,7 @@ const Movieinfo = (currentMovie, handleClose,) => {
                                 </div>
                             </div>
                         )
-                    })}
+                    })} */}
 
                 </div>
             </div>

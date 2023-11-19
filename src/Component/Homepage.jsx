@@ -14,8 +14,11 @@ const Homepage = () => {
     return (
 
         <Containers.Provider value={{ inputValue }}>
-            <div className="main">
-                <div data-aos="zoom-in" data-aos-duration="1000" data-aos-easing="ease-in-out" style={{ width: '23%' }}>
+            <div className="main" id='up'>
+                <div data-aos="zoom-in" data-aos-duration="1000" data-aos-easing="ease-in-out" style={{ display:'flex', width: '23%' }}>
+                    <div style={{display:'flex'}}>
+                        <Icons.Justify size={25} className="MenuBtn" />
+                    </div>
                     <NavLink to='' style={{ textDecoration: 'none', color: 'rgb(17, 17, 52)', display: 'flex' }}>
                         <div className="home" >MovieDb</div>
                     </NavLink></div>
@@ -38,16 +41,16 @@ const Homepage = () => {
             </div>
 
             <div style={{ fontSize: '2.7em', width: '59px', position: 'fixed', bottom: '0', right: '0', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
-                <a href="#nav"><Icons.ArrowUpCircleFill style={{ color: 'white' }} /></a>
+                <a href="#up"><Icons.ArrowUpCircleFill style={{ color: 'white' }} /></a>
             </div>
-            
-                <Routes>
-                    <Route path='' element={<Movies />}></Route>
-                    <Route path='TopRated' element={<TopRated />}></Route>
-                    <Route path='Upcoming' element={<Upcoming />}></Route>
-                    <Route path='Movieinfo' element={<Movieinfo />}></Route>
-                </Routes>
-            
+
+            <Routes>
+                <Route path='' element={<Movies />}></Route>
+                <Route path='TopRated' element={<TopRated />}></Route>
+                <Route path='Upcoming' element={<Upcoming />}></Route>
+                <Route path='Movieinfo' element={<Movieinfo />}></Route>
+            </Routes>
+
         </Containers.Provider>
 
     )

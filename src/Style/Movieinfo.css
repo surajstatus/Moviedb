@@ -69,3 +69,8 @@
 .cast-img img {
     border-radius: 5px;
 }
+
+.cast-img img {
+    width: 100%;
+    height: 100%;
+}
